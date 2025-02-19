@@ -3,7 +3,6 @@
     "source": {
         "directories": [
             "app",
-            "src",
         ],
         "excludes": [
             "Providers"
@@ -29,9 +28,9 @@
         "@cast": true,
         "@conditional_boundary": true,
         "@conditional_negotiation": true,
-        "@equal": false,
+        "@equal": true,
         "@function_signature": true,
-        "@identical": true,
+        "@identical": false,
         "@number": true,
         "@operator": true,
         "@regex": true,
@@ -39,6 +38,7 @@
         "@return_value": true,
         "@sort": true,
         "@unwrap": true,
-        "@extensions": true
+        "@zero_iteration": true,
+        "@extensions": false
     }
 }

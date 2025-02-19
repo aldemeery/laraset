@@ -10,5 +10,4 @@ parameters:
     tmpDir: .cache/phpstan
     paths:
         - app
-        - src
         - tests
