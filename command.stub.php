@@ -553,7 +553,7 @@ class AppInstallCommand extends Command
             return function (): void {
                 P\spin(function (): void {
                     $this->composerRequire(['laravel/tinker'], dev: true);
-                }, 'Moving...');
+                }, 'Moving Tinker...');
             };
         };
     }
