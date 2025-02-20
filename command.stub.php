@@ -308,6 +308,18 @@ class AppInstallCommand extends Command
 
             return function (): void {
                 P\spin(function (): void {
+                    $xdebugConfig = <<<XDC
+
+                    # For all available modes see: https://xdebug.org/docs/all_settings#mode
+                    SAIL_XDEBUG_MODE=develop,debug,coverage
+                    XDC;
+
+                    $this->files->append('.env.example', $xdebugConfig);
+
+                    if ($this->files->exists('.env')) {
+                        $this->files->append('.env', $xdebugConfig);
+                    }
+
                     Process::run([
                         'curl',
                         '-s',
