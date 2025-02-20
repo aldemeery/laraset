@@ -63,7 +63,7 @@ class AppInstallCommand extends Command
             );
 
             P\info('Installation complete!');
-            P\warning('Make `composer code:check` runs without errors before continuing.');
+            P\warning('Make sure `composer code:check` runs without errors before continuing.');
 
             return Command::SUCCESS;
         } catch (Exception $e) {
@@ -312,6 +312,7 @@ class AppInstallCommand extends Command
 
                     # For all available modes see: https://xdebug.org/docs/all_settings#mode
                     SAIL_XDEBUG_MODE=develop,debug,coverage
+
                     XDC;
 
                     $this->files->append('.env.example', $xdebugConfig);
