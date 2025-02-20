@@ -289,7 +289,7 @@ class AppInstallCommand extends Command
                     Process::run([
                         'curl',
                         '-s',
-                        'https://raw.githubusercontent.com/aldemeery/laraset/refs/heads/master/.gitignore',
+                        'https://aldemeery.github.io/laraset/gitignore.stub',
                         '-o',
                         '.gitignore',
                     ])->throw();
@@ -308,7 +308,7 @@ class AppInstallCommand extends Command
                     Process::run([
                         'curl',
                         '-s',
-                        'https://raw.githubusercontent.com/aldemeery/laraset/refs/heads/master/phpunit.xml',
+                        'https://aldemeery.github.io/laraset/phpunit.stub.xml',
                         '-o',
                         'phpunit.xml',
                     ])->throw();
@@ -424,7 +424,7 @@ class AppInstallCommand extends Command
                     Process::run([
                         'curl',
                         '-s',
-                        'https://raw.githubusercontent.com/aldemeery/laraset/refs/heads/master/pint.json',
+                        'https://aldemeery.github.io/laraset/pint.stub.json',
                         '-o',
                         'pint.json',
                     ])->throw();
@@ -450,9 +450,9 @@ class AppInstallCommand extends Command
                     Process::run([
                         'curl',
                         '-s',
-                        'https://raw.githubusercontent.com/aldemeery/laraset/refs/heads/master/phpstan.neon.dist',
+                        'https://aldemeery.github.io/laraset/phpstan.stub.neon',
                         '-o',
-                        'phpstan.neon.dist',
+                        'phpstan.neon',
                     ])->throw();
                 }, 'Downloading PHPStan...');
             };
@@ -471,9 +471,9 @@ class AppInstallCommand extends Command
                     Process::run([
                         'curl',
                         '-s',
-                        'https://raw.githubusercontent.com/aldemeery/laraset/refs/heads/master/phpcs.xml.dist',
+                        'https://aldemeery.github.io/laraset/phpcs.stub.xml',
                         '-o',
-                        'phpcs.xml.dist',
+                        'phpcs.xml',
                     ])->throw();
                 }, 'Downloading PHP Code Sniffer...');
             };
@@ -499,9 +499,9 @@ class AppInstallCommand extends Command
                     Process::run([
                         'curl',
                         '-s',
-                        'https://raw.githubusercontent.com/aldemeery/laraset/refs/heads/master/infection.json.dist',
+                        'https://aldemeery.github.io/laraset/infection.stub.json',
                         '-o',
-                        'infection.json.dist',
+                        'infection.json',
                     ])->throw();
                 }, 'Downloading Infection...');
             };
