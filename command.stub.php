@@ -63,7 +63,7 @@ class AppInstallCommand extends Command
             );
 
             P\info('Installation complete!');
-            P\warning('Make sure `composer code:check` runs without errors before continuing.');
+            P\warning('Make `composer code:check` runs without errors before continuing.');
 
             return Command::SUCCESS;
         } catch (Exception $e) {
@@ -208,6 +208,9 @@ class AppInstallCommand extends Command
                     'homepage' => P\text('Composer Author Homepage', 'e.g. https://johndoe.com', required: true, validate: 'url:https'),
                 ],
             ],
+            'require' => [
+                'php' => P\select('PHP Version', ['^8.2', '^8.3', '^8.4'], '^8.4'),
+            ],
         ];
 
         P\clear();
@@ -335,7 +338,7 @@ class AppInstallCommand extends Command
                     'description' => $this->config['composer']['description'],
                     'license' => $this->config['composer']['license'],
                     'authors' => $this->config['composer']['authors'],
-                    'require' => $config['require'] ?? [],
+                    'require' => array_merge($config['require'] ?? [], $this->config['composer']['require']),
                     'require-dev' => $config['require-dev'] ?? [],
                     'autoload' => $config['autoload'] ?? [],
                     'autoload-dev' => $config['autoload-dev'] ?? [],
@@ -550,7 +553,7 @@ class AppInstallCommand extends Command
             return function (): void {
                 P\spin(function (): void {
                     $this->composerRequire(['laravel/tinker'], dev: true);
-                }, 'Moving Tinker...');
+                }, 'Moving...');
             };
         };
     }
