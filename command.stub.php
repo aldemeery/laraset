@@ -63,7 +63,7 @@ class AppInstallCommand extends Command
             );
 
             P\info('Installation complete!');
-            P\warning('Make `composer code:check` runs without errors before continuing.');
+            P\warning('Make sure `composer code:check` runs without errors before continuing.');
 
             return Command::SUCCESS;
         } catch (Exception $e) {
@@ -550,7 +550,7 @@ class AppInstallCommand extends Command
             return function (): void {
                 P\spin(function (): void {
                     $this->composerRequire(['laravel/tinker'], dev: true);
-                }, 'Moving...');
+                }, 'Moving Tinker...');
             };
         };
     }
